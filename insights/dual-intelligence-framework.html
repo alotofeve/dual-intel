@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What "Dual Intelligence" Actually Means — Dual Intel</title>
+  <meta name="description" content="Why a system that treats human context as a constraint on AI output behaves differently than one that treats AI output as the answer." />
+  <meta name="theme-color" content="#0b1613">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">D</span>
+        Dual Intel
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../vision.html">Vision</a>
+        <a href="../applications.html">Applications</a>
+        <a href="../about.html">About</a>
+        <a class="active" href="../insights.html">Insights</a>
+        <a href="../connect.html">Connect</a>
+      </div>
+      <a class="btn btn-primary btn-sm nav-cta" href="../connect.html">Get in touch</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <div class="eyebrow"><span class="dot"></span>Vision &amp; Framework</div>
+        <h1>What "Dual Intelligence" Actually Means</h1>
+        <p class="article-meta">Why a system that treats human context as a constraint on AI output behaves differently than one that treats AI output as the answer.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <p>
+          Ask a language model what supplement helps with focus, or what skincare routine addresses fine lines,
+          and it will give you a confident, well-written answer. That answer is also, by construction, generic —
+          it describes what tends to work across the material the model was trained on, not what's right for the
+          specific person asking. The model doesn't know you're already taking something that interacts with its
+          suggestion. It doesn't know your history with a given treatment, or that you tried the "obvious" answer
+          two years ago and it didn't work. It's answering the question you typed, not the situation you're in.
+        </p>
+
+        <h2>Two kinds of intelligence, doing different jobs</h2>
+        <p>
+          "Dual Intelligence" is our name for a specific architectural choice: human intelligence and AI
+          intelligence aren't blended into one fuzzy "AI-powered" output — they do distinct jobs, in a specific
+          order.
+        </p>
+        <ul>
+          <li><strong>Human intelligence</strong> supplies the context that can't be inferred: current medications,
+            service history, personal constraints, and the values that decide what a good outcome even looks like.</li>
+          <li><strong>AI intelligence</strong> supplies what's hard for a person to do manually at scale: reading
+            across a large body of material consistently, checking every case against every rule without
+            getting tired or skipping steps, and personalizing at a level of detail that doesn't scale
+            one consultant at a time.</li>
+        </ul>
+        <p>
+          The order matters. In most "AI-powered" products, the model generates first and a human reviews after —
+          if at all. We build the opposite sequence: human context is gathered first and used to constrain what
+          the AI is even allowed to generate.
+        </p>
+
+        <h2>What this looks like when it's not just a slogan</h2>
+        <p>
+          In <a href="../applications.html">Cognitive Daily</a>, before any compound is recommended, the system
+          checks what a customer is already taking — prescriptions and supplements — against a safety layer.
+          That check happens first. The AI isn't generating a recommendation and then getting fact-checked; the
+          human-supplied context determines the space of things it's allowed to suggest in the first place.
+        </p>
+        <p>
+          In Vibrant Intel, the starting point isn't a cold intake form the AI has to guess around — it's an
+          actual client's service history and a practitioner's professional read on what's worked. The AI's job
+          is to organize and personalize a plan on top of that real context, not invent a profile from scratch.
+        </p>
+
+        <h2>Why we think this holds up better</h2>
+        <p>
+          A system built this way is slower to build and less flashy to demo — there's no single "type anything,
+          get an answer" moment. What it buys instead is a recommendation that's actually accountable to your
+          specific situation, rather than the average answer across everyone who ever asked something similar.
+          That's the bet behind Dual Intelligence: augmentation that's constrained by real human context beats
+          generation that's corrected after the fact.
+        </p>
+
+        <div class="disclaimer">
+          See where this is actually being built today on the <a href="../applications.html">Applications</a> page.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-cta">
+      <div class="footer-cta-card">
+        <h2>Let's build intelligence that stays human</h2>
+        <p>Interested in our work, our vision, or a collaboration? We'd love to hear from you.</p>
+        <a class="btn btn-primary btn-arrow" href="mailto:admin@dual-intel.com">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          admin@dual-intel.com
+        </a>
+      </div>
+    </div>
+    <div class="container footer-inner">
+      <a class="brand brand-sm" href="../index.html">
+        <span class="brand-mark">D</span>
+        &copy; 2026 Dual Intelligence LLC
+      </a>
+      <div class="footer-links">
+        <a href="mailto:admin@dual-intel.com">admin@dual-intel.com</a>
+        <a href="https://vibrantintel.com">Vibrant Intel</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Safety Screening Comes First — Dual Intel</title>
+  <meta name="description" content="The design decision that shapes everything else in Cognitive Daily's report pipeline." />
+  <meta name="theme-color" content="#0b1613">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">D</span>
+        Dual Intel
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../vision.html">Vision</a>
+        <a href="../applications.html">Applications</a>
+        <a href="../about.html">About</a>
+        <a class="active" href="../insights.html">Insights</a>
+        <a href="../connect.html">Connect</a>
+      </div>
+      <a class="btn btn-primary btn-sm nav-cta" href="../connect.html">Get in touch</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <div class="eyebrow"><span class="dot"></span>Cognitive Daily</div>
+        <h1>Why Safety Screening Comes Before the Recommendation, Not After</h1>
+        <p class="article-meta">The design decision that shapes everything else in Cognitive Daily's report pipeline.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <p>
+          It would be easy to build a nootropic recommendation tool the "normal" way: ask what someone wants to
+          improve, generate a plausible-sounding stack of compounds, and append a disclaimer at the bottom.
+          That's the pattern most supplement quizzes and AI wellness apps follow. We designed Cognitive Daily to
+          do the opposite: the safety check happens first, and it constrains everything downstream — it isn't a
+          disclaimer bolted onto the end.
+        </p>
+
+        <h2>The two questions that come before "what should I take"</h2>
+        <p>
+          Before Cognitive Daily reasons about a single compound, it requires two pieces of information: what
+          prescription medications a person is currently on, and what supplements or nootropics they already
+          take. These aren't optional fields — they're the highest-priority inputs in the intake, because
+          they're the ones most likely to make an otherwise-reasonable recommendation actively harmful for a
+          specific person.
+        </p>
+        <p>
+          Two compounds can each look fine individually and still be a bad combination — competing for the same
+          receptor, stacking the same stimulant effect, or compounding a risk to the liver. Generic answers to
+          "what's good for focus" don't know that. A system that checks your actual current stack before
+          suggesting anything new does.
+        </p>
+
+        <h2>What the screening actually does</h2>
+        <p>
+          Every compound under consideration is checked against a set of cross-cutting safety rules — drug
+          interactions, bleeding risk, serotonergic overlap, stimulant stacking, and organ-specific flags such as
+          liver risk at certain doses — before it's allowed into a recommendation. If a conflict exists, the
+          report says so explicitly, states what's being modified or omitted, and why. If nothing is flagged, the
+          report says that too, rather than staying silent on the question.
+        </p>
+
+        <h2>Why we treat this as the highest-liability, highest-value part of the system</h2>
+        <p>
+          The interaction check is simultaneously the part of Cognitive Daily with the most legal and ethical
+          weight, and the part that makes the tool worth using at all. Anyone can generate a plausible list of
+          "focus supplements." What's actually hard — and actually valuable — is doing that consistently while
+          checking it against a person's real medical context every single time, without shortcuts.
+        </p>
+
+        <div class="disclaimer">
+          Cognitive Daily produces research synthesis for informational purposes — it is not medical advice, a
+          diagnosis, or a substitute for a physician. Interaction flags are meant to prompt a conversation with
+          your doctor, not to serve as clinical clearance.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-cta">
+      <div class="footer-cta-card">
+        <h2>Let's build intelligence that stays human</h2>
+        <p>Interested in our work, our vision, or a collaboration? We'd love to hear from you.</p>
+        <a class="btn btn-primary btn-arrow" href="mailto:admin@dual-intel.com">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          admin@dual-intel.com
+        </a>
+      </div>
+    </div>
+    <div class="container footer-inner">
+      <a class="brand brand-sm" href="../index.html">
+        <span class="brand-mark">D</span>
+        &copy; 2026 Dual Intelligence LLC
+      </a>
+      <div class="footer-links">
+        <a href="mailto:admin@dual-intel.com">admin@dual-intel.com</a>
+        <a href="https://vibrantintel.com">Vibrant Intel</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
