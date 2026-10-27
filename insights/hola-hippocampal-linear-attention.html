@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hippocampal Linear Attention (HOLA): Scaling Context Isn't the Answer — Dual Intel</title>
+  <meta name="description" content="Why the hard part of long-horizon AI isn't a bigger context window, but deciding what not to compress — and what hippocampal memory partitioning offers." />
+  <meta name="theme-color" content="#0b1613">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html">
+        <img class="brand-logo" src="../images/logo7.webp" alt="Dual Intel">
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../vision.html">Vision</a>
+        <a href="../applications.html">Applications</a>
+        <a href="../about.html">About</a>
+        <a class="active" href="../insights.html">Insights</a>
+        <a href="../connect.html">Connect</a>
+      </div>
+      <a class="btn btn-primary btn-sm nav-cta" href="../connect.html">Get in touch</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <div class="eyebrow"><span class="dot"></span>Research Notes</div>
+        <h1>Hippocampal Linear Attention (HOLA): Scaling Context Isn't the Answer</h1>
+        <p class="article-meta">By Duo Xu · October 2026 · <a href="https://www.linkedin.com/posts/duo-xu-65726837_hippocampal-linear-attention-hola-scaling-share-7511974050320244736-ABcj" target="_blank" rel="noopener">Originally posted on LinkedIn</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <p>Scaling context windows to millions of tokens isn't an engineering victory. It's an admission of failure.</p>
+
+        <p>We talk about infinite context windows, then train with brute-force quadratic attention and quietly accept the cost: surging inference compute, massive VRAM footprints, and models that still drown in needle-in-a-haystack retrieval when the context gets noisy.</p>
+
+        <p>The recent HOLA architecture by Wanyun Cui (arXiv:2607.02303v1) is worth your attention precisely because it doesn't do this. It achieves long-horizon associative recall over streaming sequences — with no dense quadratic attention scaling at all.</p>
+
+        <h2>Local biological division of labor</h2>
+
+        <p>The mechanism replacing brute-force caching has two parts.</p>
+
+        <p><strong>1. Learning is local in space and time.</strong> HOLA pairs a compressive linear-attention recurrent backbone with a bounded, exact Key-Value cache. Instead of forcing every token through one finite workspace or storing every token in memory, the model evaluates its own residual update: β · ||e||. This acts as a parameter-free surprise signal. If an input carries low prediction error, it stays in the compressive state. If it causes an error spike, it gets indexed into the exact episodic cache. Below the critical surprise threshold, items decay or compress; above it, they persist without backward-locking or global recomputation.</p>
+
+        <p><strong>2. Decoupled RMSNorm-γ acts as the stabilizer.</strong> Storing exact pairs solves nothing if retrieval blurs them back together. HOLA decouples the cache readout using an RMSNorm-γ layer, preventing soft context smearing. It sharpens episodic reactivation, ensuring that retrieval behaves like an addressable memory query rather than an averaged representation smear. This stabilizes the inference regime, giving linear attention the precise recall of Transformers without the memory wall.</p>
+
+        <h2>The cognitive-neuroscience view</h2>
+
+        <p>From a cognitive-neuroscience standpoint, this is the more honest model. Biological systems don't maintain raw perceptual transcripts in working memory — the brain compresses background flow in the neocortex while the hippocampus indexes surprising, high-error events for episodic recall. Cui's framework instantiates this loop cleanly: working memory as compressive state, surprise as an eviction gate, and episodic memory as a bounded exact cache.</p>
+
+        <h2>What this means for builders</h2>
+
+        <p>For those building long-horizon agent workflows and edge systems: the properties you want — low VRAM overhead, linear scaling, zero catastrophic forgetting — are achievable, but only if you treat biological memory partitioning as a first-class architectural component rather than an afterthought.</p>
+
+        <p>The hard part isn't expanding the context window. It's deciding what not to compress in the first place.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-cta">
+      <div class="footer-cta-card">
+        <h2>Let's build intelligence that stays human</h2>
+        <p>Interested in our work, our vision, or a collaboration? We'd love to hear from you.</p>
+        <a class="btn btn-primary btn-arrow" href="mailto:admin@dual-intel.com">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          admin@dual-intel.com
+        </a>
+      </div>
+    </div>
+    <div class="container footer-inner">
+      <a class="brand brand-sm" href="../index.html">
+        <span class="brand-mark">D</span>
+        &copy; 2026 Dual Intelligence LLC
+      </a>
+      <div class="footer-links">
+        <a href="mailto:admin@dual-intel.com">admin@dual-intel.com</a>
+        <a href="https://vibrantintel.com">Vibrant Intel</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
